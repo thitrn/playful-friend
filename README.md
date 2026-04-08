@@ -1,25 +1,51 @@
-Exit with Esc, then run:
+✅ What you need to do on your Mac
+1. Connect to the Raspberry Pi via SSH
 
-aplay -D plughw:2,0 /usr/share/sounds/alsa/Front_Center.wav
+Open Terminal on your Mac:
 
-Then run:
+ssh pi@<raspberry-pi-ip>
 
-speaker-test -D plughw:2,0 -t wav
+Example:
 
-Then run:
+ssh pi@192.168.1.45
 
-espeak --stdout "hello" | aplay -D plughw:2,0
+👉 If you don’t know the IP:
 
+arp -a
 
-Before running, test these in order
+or check your router / ask your prof (since they said routers are being set up)
 
-python3 -c "from picrawler import Picrawler; print('ok')"
+2. Once connected → NOW you’re “inside” the Pi
 
-espeak "hello"
+You’ll see something like:
 
-cd ~/picrawler/examples
+pi@raspberrypi:~ $
 
-sudo python3 move.py
+👉 From here, run ALL the install commands I gave you earlier
+(This is the important part — you're no longer on your Mac)
+
+3. Install modules (run on Pi, not Mac)
+sudo apt update
+sudo apt upgrade
+git clone -b v2.0 https://github.com/sunfounder/robot-hat.git --depth 1
+cd robot-hat
+sudo python3 install.py
+git clone https://github.com/sunfounder/vilib.git --depth 1
+cd vilib
+sudo python3 install.py
+git clone https://github.com/sunfounder/picrawler.git --depth 1
+cd picrawler
+sudo python3 setup.py install
+4. Run your code FROM your Mac (but on Pi)
+
+You can:
+
+write code on Mac (VS Code)
+then upload OR directly SSH and run
+
+Run:
+
+python3 your_file.py
 
 Then run your file: sudo python3 corner_game.py
 
