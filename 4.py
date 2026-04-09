@@ -118,7 +118,7 @@ def main():
         # Challenge 1
         play_challenge(
             "Challenge 1",
-            "Can you do 3 jumping jacks before my turbo dash is over?",
+            "Can you do run to corner A and come back before my turbo dash is over?",
             [
                 ('forward', 1, 85),
                 ('forward', 1, 85),
