@@ -8,11 +8,29 @@ crawler = Picrawler()
 PLAYER_SCORE = 0
 ROBOT_SCORE = 0
 
+WIN_SOUND = "/home/pi/picrawler/examples/win.wav"
+LOSE_SOUND = "/home/pi/picrawler/examples/lose.wav"
+
 
 def say(text):
     safe_text = text.replace('"', '')
     print("Robot says:", text)
     os.system('espeak --stdout "{}" | aplay -D plughw:2,0 -c 2'.format(safe_text))
+
+
+def play_sound(sound_file):
+    if os.path.exists(sound_file):
+        os.system('aplay -D plughw:2,0 "{}"'.format(sound_file))
+    else:
+        print("Sound file not found:", sound_file)
+
+
+def play_win_sound():
+    play_sound(WIN_SOUND)
+
+
+def play_lose_sound():
+    play_sound(LOSE_SOUND)
 
 
 def green_detected(threshold=80):
@@ -86,10 +104,14 @@ def play_challenge(title, prompt, sequence, round_time=5, threshold=80):
 
     if detected:
         PLAYER_SCORE += 1
+        play_win_sound()
+        sleep(0.2)
         say("Green detected! You win this round!")
         return True
     else:
         ROBOT_SCORE += 1
+        play_lose_sound()
+        sleep(0.2)
         say("Too slow! I win this round!")
         return False
 
