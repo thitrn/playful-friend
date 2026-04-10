@@ -263,7 +263,7 @@ def main():
         level2_rounds = [
             (
                 "Level 2 round 1",
-                "Can you crab walk to corner D and come back before I do my zig zag burst? Then show me your green game bracelet.",
+                "Can you crab walk to corner B and come back before I do my zig zag burst? Then show me your green game bracelet.",
                 [
                     ('forward', 1, 80),
                     ('turn left angle', 1, 80),
@@ -334,7 +334,7 @@ def main():
             ),
             (
                 "Level 3 round 2",
-                "Can you touch corners B, C, B, A, and D in that order, then come back to me and show me your green game bracelet before my corner attack is over?",
+                "Can you touch corners B, C, B, A, B in that order, then come back to me and show me your green game bracelet before my corner attack is over?",
                 [
                     ('forward', 1, 85),
                     ('turn left', 1, 90),
