@@ -223,7 +223,7 @@ def main():
             ),
             (
                 "Level 1 round 2",
-                "Can you do 2 jumping jacks before I do my turbo dash? Then come back and show me your green game bracelet.",
+                "Can you go to corner C and do 2 jumping jacks before I do my turbo dash? Then come back and show me your green game bracelet.",
                 [
                     ('forward', 1, 85),
                     ('forward', 1, 85),
