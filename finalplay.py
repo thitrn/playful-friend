@@ -292,7 +292,7 @@ def main():
             ),
             (
                 "Level 2 round 3",
-                "Can you hop to corner C and back before I finish my fast zig zag? Then show me your green game bracelet.",
+                "Can you hop to corner C and back before I finish my side dash? Then show me your green game bracelet.",
                 [
                     ('forward', 1, 85),
                     ('turn left angle', 1, 85),
@@ -347,7 +347,7 @@ def main():
             ),
             (
                 "Level 3 round 3",
-                "Can you do 3 burpees, then 4 hops, then spin once, then race back to me and show me your green game bracelet before my dance combo is over?",
+                "Can you do 3 burpees, then 4 hops, then spin once, then race back to me and show me your green game bracelet before my hip hop dance combo is over?",
                 [
                     ('turn left', 1, 90),
                     ('turn right', 1, 90),
